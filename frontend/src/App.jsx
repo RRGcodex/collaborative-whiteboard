@@ -1,9 +1,10 @@
 import React from 'react'
+import Whiteboard from './components/Whiteboard'
 
 const App = () => {
   return (
     <div>
-      Hello From app
+      <Whiteboard/>
     </div>
   )
 }
