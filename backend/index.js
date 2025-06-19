@@ -23,8 +23,13 @@ io.on("connection", (socket)=>{
         console.log(`${socket.id} joined the room ${roomId}`);
     });
 
-    socket.on("drawing", ({roomId, drawingData}) => {
-        socket.broadcast.to(roomId).emit("drawing", drawingData);
+    socket.on("drawing", ({roomId, ...drawingData}) => {
+        if(!roomId) return;
+        socket.to(roomId).emit("drawing", drawingData);
+    });
+
+    socket.on("clear", (roomId)=>{
+        socket.to(roomId).emit("clear");
     })
 
     socket.on("disconnect", ()=>{
