@@ -1,9 +1,9 @@
 import React from 'react'
-import Whiteboard from './components/Whiteboard'
+import Whiteboard from './components/whiteboard/Whiteboard'
 
 const App = () => {
   return (
-    <div>
+    <div className='w-screen h-screen overflow-y-auto'> 
       <Whiteboard/>
     </div>
   )
