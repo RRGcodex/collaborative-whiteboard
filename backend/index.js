@@ -7,6 +7,8 @@ import {createServer} from 'http';
 const app = express();
 const server = createServer(app);
 const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(express.json());
 
 const io = new Server(server, {
     cors:{
