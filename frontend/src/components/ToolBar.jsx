@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Palette, Eraser, Download, Trash2, Users, Pencil, Circle, Square, ArrowRight, Type } from "lucide-react";
+import {  Eraser, Download, Trash2, Users, Pencil, Circle, Square, ArrowRight} from "lucide-react";
 
 
 
@@ -8,7 +8,7 @@ const ToolBar = ({
   setColor,
   penSize,
   setPenSize,
-  isEraser,
+  
   setIsEraser,
   tool,
   setTool,
@@ -22,7 +22,7 @@ const ToolBar = ({
     { id: 'circle', icon: Circle, label: 'Circle' },
     { id: 'square', icon: Square, label: 'Rectangle' },
     { id: 'arrow', icon: ArrowRight, label: 'Arrow' },
-    { id: 'text', icon: Type, label: 'Text' }
+   
   ];
 
   const presetColors = [
@@ -31,9 +31,8 @@ const ToolBar = ({
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 mb-6">
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 mb-4">
       <div className="flex flex-wrap items-center gap-4">
-        {/* Tools */}
         <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
           {tools.map(({ id, icon: Icon, label }) => (
             <button
@@ -54,9 +53,8 @@ const ToolBar = ({
           ))}
         </div>
 
-        {/* Color Palette */}
         <div className="flex items-center gap-2">
-          <div className="flex gap-1 p-2 bg-gray-50 rounded-xl">
+          <div className="flex gap-1 p-2 bg-gray-50 rounded-xl flex-wrap">
             {presetColors.map((presetColor) => (
               <button
                 key={presetColor}
@@ -77,7 +75,6 @@ const ToolBar = ({
           />
         </div>
 
-        {/* Pen Size */}
         <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-xl">
           <span className="text-sm font-medium text-gray-700">Size:</span>
           <input
@@ -91,8 +88,7 @@ const ToolBar = ({
           <span className="text-sm font-medium text-gray-700 w-8">{penSize}px</span>
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-2 ml-auto">
+        <div className="flex items-center gap-2 ml-auto flex-wrap">
           <div className="flex items-center gap-2 px-3 py-2 bg-green-50 rounded-lg">
             <Users size={16} className="text-green-600" />
             <span className="text-sm font-medium text-green-700">{connectedUsers} online</span>
