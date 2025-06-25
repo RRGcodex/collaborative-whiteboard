@@ -26,6 +26,7 @@ Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/RRGcodex/collaborative-whiteboard
+cd collaborative-whiteboard
 ```
 
 ### Backend Setup
